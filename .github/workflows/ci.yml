@@ -1,24 +1,23 @@
 name: CD
 on: [workflow_dispatch]
 jobs:
-  # This workflow contains a single job called "hello"
+  # This workflow contains a single job called  "hello"
   hello:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    #Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Deploy using ssh
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.USER_NAME}}
-          key: ${{secrets.PRIVATE_KEY}}
-          port: 22
-          script: |
-            echo ${{secrets.HOST}}
-            echo ${{secrets.USER_NAME}}
-            echo ${{secrets.PRIVATE_KEY}}
-            cd ~/projets/demo1/nico
-            pwd
-            touch nico.txt
+    - name: helloweurldz
+      run : echo 'Hello simplonz'
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER_NAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd ~/projets/demo1/nico
+          pwd
+          touch nico.txt

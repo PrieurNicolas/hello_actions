@@ -12,7 +12,7 @@ jobs:
         username: ${{ secrets.USER_NAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
-        script:
+        script: |
           cd ~/projets/demo1/nico
           pwd
           touch nico.txt

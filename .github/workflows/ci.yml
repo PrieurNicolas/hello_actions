@@ -5,5 +5,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: hellowourldzzz
-      run: echo 'Hello simplonz'
+    - name: Deploy using SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER_NAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script:
+          cd ~/projets/demo1/nico
+          pwd
+          touch nico.txt
